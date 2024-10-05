@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Moto Deportiva</title>
+</head>
+<body>
+    <h1>Agregar Moto Deportiva</h1>
+    <form action="{{ url_for('add') }}" method="POST">
+        <label for="modelo">Modelo:</label>
+        <input type="text" name="modelo" id="modelo" required>
+        <br>
+        <label for="marca">Marca:</label>
+        <input type="text" name="marca" id="marca" required>
+        <br>
+        <label for="velocidad_maxima">Velocidad Máxima (km/h):</label>
+        <input type="number"

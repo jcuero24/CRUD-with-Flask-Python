@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Moto Deportiva</title>
+</head>
+<body>
+    <h1>Editar Moto Deportiva</h1>
+    <form action="{{ url_for('edit', id=moto.id) }}" method="POST">
+        <label for="modelo">Modelo:</label>
+        <input type="text" name="modelo" id="modelo" value="{{ moto.modelo }}" required>
+        <br>
+        <label for="marca">Marca:</label>
+        <input type="text" name="marca" id="marca" value="{{ moto.marca }}" required>
+        <br>
+        <label for="velocidad_maxima">Velocidad Máxima (km/h):</label>
+        <input type="number" name="velocidad_maxima" id="velocidad_maxima" value="{{ moto.velocidad_maxima }}" required>
+        <br>
+        <button type="submit">Guardar cambios</button>
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">Volver a la lista de motos</a>
+</body>
+</html>

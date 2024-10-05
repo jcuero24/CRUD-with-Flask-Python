@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motos Deportivas</title>
+</head>
+<body>
+    <h1>Las 30 Motos Deportivas más rápidas del mundo</h1>
+    <a href="{{ url_for('add') }}">Agregar nueva moto</a>
+    <ul>
+        {% for moto in motos %}
+            <li>
+                <strong>{{ moto.modelo }}</strong> - {{ moto.marca }} - Velocidad Máxima: {{ moto.velocidad_maxima }} km/h
+                <a href="{{ url_for('edit', id=moto.id) }}">Editar</a>
+                <form action="{{ url_for('delete', id=moto.id) }}" method="post" style="display:inline;">
+                    <button type="submit">Eliminar</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
